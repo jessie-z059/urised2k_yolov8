@@ -1,0 +1,14 @@
+path: dataset
+
+train: images/train
+val: images/val
+
+names:
+  0: leukocyte
+  1: erythrocyte
+  2: broken_leukocyte
+  3: broken_erythrocyte
+  4: mycete
+  5: crystal
+  6: epithelial
+  7: other
