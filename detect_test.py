@@ -2,11 +2,10 @@
 YOLOv8 Detection Script
 
 This script loads a trained YOLO model (.pt file) and runs object detection
-on a test image. The image path is entered by the user.
+on a test image.
 
 Usage:
     python detect_test.py
-    then type the image path
 
 Example:
     Enter image path: test/test.jpg
@@ -17,15 +16,21 @@ from pathlib import Path
 
 
 # =========================
+# Base directory (project root)
+# =========================
+BASE_DIR = Path(__file__).parent
+
+
+# =========================
 # Model path
 # =========================
-MODEL_PATH = "./models/best.pt"
+MODEL_PATH = BASE_DIR / "models/best.pt"
 
 
 # =========================
 # Output folder
 # =========================
-OUTPUT_PROJECT = "."
+OUTPUT_PROJECT = BASE_DIR
 OUTPUT_NAME = "predict"
 
 
@@ -34,31 +39,36 @@ def main():
     # ask user for image path
     source_image = input("Enter image path: ").strip()
 
+    source_path = Path(source_image)
+
     # check image exists
-    if not Path(source_image).exists():
+    if not source_path.exists():
         print("Error: Image file not found.")
         return
 
     # check model exists
-    if not Path(MODEL_PATH).exists():
+    if not MODEL_PATH.exists():
         print("Error: Model file not found.")
+        print("Expected location:", MODEL_PATH)
         return
 
-    # load model
-    model = YOLO(MODEL_PATH)
+    print("\nLoading model...")
+    model = YOLO(str(MODEL_PATH))
+
+    print("Running detection...\n")
 
     # run prediction
     results = model.predict(
-        source=source_image,
+        source=str(source_path),
         save=True,
-        project=OUTPUT_PROJECT,
+        project=str(OUTPUT_PROJECT),
         name=OUTPUT_NAME,
         exist_ok=True
     )
 
     print("\nDetection finished.")
-    print("Input image:", source_image)
-    print("Output saved to: ./predict")
+    print("Input image:", source_path)
+    print("Output saved to:", OUTPUT_PROJECT / OUTPUT_NAME)
 
     # print detection results
     for r in results:
