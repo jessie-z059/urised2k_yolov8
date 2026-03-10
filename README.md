@@ -1,10 +1,11 @@
-# Urised YOLO
+# Microfluidic subteam
+# Urised2K Dataset Trained with YOLOv8
 
 YOLO-based object detection project for urine sediment images.
 
 This repository provides tools for:
 
-- Converting XML annotations to YOLO format
+- Converting XML annotations to YOLO format (.txt)
 - Training a YOLOv8 model
 - Running object detection on test images
 
