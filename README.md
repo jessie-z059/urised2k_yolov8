@@ -11,6 +11,12 @@ This repository provides tools for:
 
 ---
 
+Model performance on "evaluation" image after 5 epochs (1 hour on CPU)
+Correctly identified 25 out of 27 ground truth labels
+test image: 2014-05-17_S3_P107.jpg
+
+---
+
 # Setup Environment
 
 It is recommended to create a Python virtual environment before installing dependencies.
