@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 
 # virtual environment
-.venv/
+venv/
 
 # YOLO training outputs
 runs/

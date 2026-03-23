@@ -1,7 +1,7 @@
-path: dataset
-
+path: data_raw
 train: images/train
 val: images/val
+test: images/test  # YOLOv8 will now use this for final evaluation
 
 names:
   0: leukocyte
