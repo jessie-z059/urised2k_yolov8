@@ -13,3 +13,11 @@ runs/
 
 # Mac system file
 .DS_Store
+
+data_raw/
+test/
+test_annoed/
+predict/
+*.jpg
+*.png
+*.txt
