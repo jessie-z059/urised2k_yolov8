@@ -15,6 +15,10 @@ Model performance on "evaluation" image after 5 epochs (1 hour on CPU)
 Correctly identified 25 out of 27 ground truth labels
 test image: 2014-05-17_S3_P107.jpg
 
+Model performance on "evaluation" image after 50 epochs (20 mins T4 GPU)
+Reached test mAP of 91.7% on all categories. WBC 92%/ RBC 98%/ broken WBC 93.2%/ broken RBC 95.8%
+train/val/test division 80/10/10
+
 ---
 
 # Setup Environment
